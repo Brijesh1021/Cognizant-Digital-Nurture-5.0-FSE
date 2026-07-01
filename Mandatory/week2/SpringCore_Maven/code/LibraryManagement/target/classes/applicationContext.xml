@@ -10,7 +10,7 @@
         <bean id="bookService"
           class="com.library.service.BookService">
 
-            <constructor-arg ref="bookRepository"/>
+            <property name="repository" ref="bookRepository"/>
 
         </bean>
 

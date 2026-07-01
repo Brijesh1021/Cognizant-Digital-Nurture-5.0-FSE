@@ -3,6 +3,6 @@ package com.library.repository;
 public class BookRepository {
     
     public void getTitle(){
-        System.out.println("Book Repsoitory created");
+        System.out.println("Fetching the book from the library.....");
     }
 }
