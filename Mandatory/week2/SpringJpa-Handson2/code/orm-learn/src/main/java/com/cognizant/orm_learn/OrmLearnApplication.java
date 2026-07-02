@@ -1,4 +1,4 @@
-package com.cognizant.ormlearn;
+package com.cognizant.orm_learn;
 
 import java.util.List;
 
@@ -9,8 +9,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
-import com.cognizant.ormlearn.model.Country;
-import com.cognizant.ormlearn.service.CountryService;
+import com.cognizant.orm_learn.model.Country;
+import com.cognizant.orm_learn.service.CountryService;
 
 @SpringBootApplication
 public class OrmLearnApplication {
@@ -37,10 +37,15 @@ public class OrmLearnApplication {
 
         LOGGER.info("Start");
 
-        List<Country> countries =
-                countryService.getAllCountries();
+        List<Country> countries = countryService.getAllCountries();
 
-        LOGGER.debug("countries={}", countries);
+        LOGGER.info("===== Countries List =====");
+
+        for (Country country : countries) {
+            LOGGER.info("Code: {}, Name: {}", country.getCode(), country.getName());
+        }
+
+        LOGGER.info("==========================");
 
         LOGGER.info("End");
     }
@@ -53,7 +58,13 @@ public class OrmLearnApplication {
 
         countryService.addCountry(country);
 
-        LOGGER.info("Country Added");
+        LOGGER.info("Country Added Successfully");
+
+        Country addedCountry = countryService.getCountry("JP");
+
+        LOGGER.info("Inserted Country -> Code: {}, Name: {}",
+                addedCountry.getCode(),
+                addedCountry.getName());
     }
 
 }
