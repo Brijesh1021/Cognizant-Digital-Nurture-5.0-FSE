@@ -1,0 +1,135 @@
+MICROSERVICES
+
+Definition:
+Microservices is a software architecture style where an application is divided into multiple small, independent services. Each service focuses on a single business function and communicates with other services using APIs.
+
+Characteristics:
+1. Independent Deployment
+   - Each microservice can be developed, tested, and deployed independently.
+
+2. Single Responsibility
+   - Every service performs one specific task, such as managing accounts or loans.
+
+3. Decentralized Data
+   - Each microservice has its own database to avoid tight coupling.
+
+4. API Communication
+   - Services communicate through REST APIs, gRPC, or messaging systems like Kafka or RabbitMQ.
+
+5. Scalability
+   - Individual services can be scaled based on demand.
+
+6. Fault Isolation
+   - Failure of one service does not necessarily stop the entire application.
+
+Advantages:
+- Faster development and deployment.
+- Easy to maintain.
+- Better scalability.
+- Technology flexibility (different services can use different programming languages).
+- Improved fault tolerance.
+
+Disadvantages:
+- More complex architecture.
+- Network communication overhead.
+- Difficult distributed debugging.
+- Requires service discovery and API gateway.
+- Data consistency becomes challenging.
+
+Monolithic vs Microservices
+
+Monolithic:
+- Single application.
+- Single deployment.
+- Shared database.
+- Hard to scale individual modules.
+
+Microservices:
+- Multiple independent services.
+- Separate deployments.
+- Separate databases.
+- Easy to scale specific services.
+
+Example:
+Online Banking System
+
+Account Service
+- Create account
+- View account
+- Update account
+- Delete account
+
+Loan Service
+- Apply for loan
+- View loan details
+- Calculate EMI
+
+Customer Service
+- Manage customer information
+
+Notification Service
+- Send email
+- Send SMS
+
+Payment Service
+- Process payments
+
+How Microservices Communicate:
+Client
+   |
+API Gateway
+   |
+-------------------------------
+|        |        |           |
+Account  Loan   Customer  Payment
+Service  Service Service   Service
+
+Communication Methods:
+- REST API
+- gRPC
+- Message Queue (Kafka, RabbitMQ)
+
+Microservices in Spring Boot:
+Common components include:
+- Spring Boot
+- Spring Web
+- Spring Data JPA
+- MySQL/PostgreSQL
+- Spring Cloud
+- Eureka Server (Service Discovery)
+- Config Server
+- API Gateway
+- OpenFeign
+- Resilience4j
+- Docker
+- Kubernetes
+
+Example:
+Account Microservice
+Base URL: /accounts
+
+Endpoints:
+GET    /accounts
+GET    /accounts/{id}
+POST   /accounts
+PUT    /accounts/{id}
+DELETE /accounts/{id}
+
+Loan Microservice
+Base URL: /loans
+
+Endpoints:
+GET    /loans
+GET    /loans/{id}
+POST   /loans
+PUT    /loans/{id}
+DELETE /loans/{id}
+
+Best Practices:
+- Keep services small.
+- Use independent databases.
+- Secure APIs with authentication.
+- Implement logging and monitoring.
+- Use API Gateway.
+- Handle failures with circuit breakers.
+- Automate deployment using CI/CD.
