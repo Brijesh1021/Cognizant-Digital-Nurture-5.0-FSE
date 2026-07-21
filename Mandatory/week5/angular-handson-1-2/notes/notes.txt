@@ -1,0 +1,23 @@
+1. package.json
+The project's ingredient list + shortcut commands. It lists every external library your app depends on (Angular core, RxJS, TypeScript, etc.) with version numbers, and defines scripts like ng serve / ng build so you don't have to type long raw commands.
+
+2. angular.json
+The workspace's master control file. It tells the Angular CLI how to build and serve your project — which files are the entry points, where output goes, what CSS framework you're using, build size limits, etc. Think of it as the CLI's instruction manual specifically for this project.
+
+3. tsconfig.json
+The base TypeScript compiler configuration. TypeScript code isn't understood directly by browsers — it must be compiled (transpiled) into plain JavaScript first. This file tells the TypeScript compiler how strict to be, which JS version to target, and other compilation rules, shared across the whole project.
+
+4. tsconfig.app.json
+A more specific TypeScript config, just for the application code (as opposed to test code). It "extends" tsconfig.json (inherits its rules) and adds app-specific settings, like which files to include when compiling the actual app.
+
+5. src/main.ts
+The entry point of your entire application — the very first file that runs. Its job is to "bootstrap" (start up) your app by telling Angular: "here's the root component, go render it into the HTML page." Nothing runs before this file.
+
+6. src/app/app.config.ts (you likely have this instead of app.module.ts, since you're on modern standalone Angular)
+This file configures app-wide settings/providers (like routing) that main.ts uses when bootstrapping. In older Angular (pre-v17ish), this job was done by an app.module.ts file using something called an NgModule. Your version skips that — it's simpler, standalone-based Angular, which is the modern default.
+
+7. src/app/app.component.ts
+Your first component — the root/top-level one. Every other component you build will eventually live inside this one, directly or indirectly. It's a TypeScript class decorated with @Component, paired with an HTML template and CSS file.
+
+8. src/index.html
+The single actual HTML page the browser loads. It's mostly empty except for one special tag (like <app-root></app-root>) — Angular finds that tag and injects your entire application into it. This is the "shell" that everything else gets mounted into.
