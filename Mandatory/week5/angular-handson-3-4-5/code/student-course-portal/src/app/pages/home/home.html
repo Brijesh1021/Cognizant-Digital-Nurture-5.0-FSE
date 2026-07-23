@@ -1,0 +1,10 @@
+<h1>{{ portalName }}</h1>
+
+<!-- Property binding: component → DOM, one-way -->
+<button [disabled]="!isPortalActive" (click)="onEnrollClick()">Enroll Now</button>
+<p>{{ message }}</p>
+
+<!-- Two-way binding: DOM ↔ component -->
+<input [(ngModel)]="searchTerm" placeholder="Search courses...">
+<p>Searching for: {{ searchTerm }}</p>
+
