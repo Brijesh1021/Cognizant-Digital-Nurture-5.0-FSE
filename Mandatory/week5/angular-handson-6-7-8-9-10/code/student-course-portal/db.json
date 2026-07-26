@@ -1,0 +1,15 @@
+{
+  "courses": [
+    { "id": 1, "name": "Intro to Programming", "code": "CS101", "credits": 3, "gradeStatus": "passed" },
+    { "id": 2, "name": "Data Structures", "code": "CS201", "credits": 4, "gradeStatus": "failed" },
+    { "id": 3, "name": "Web Development", "code": "CS210", "credits": 3, "gradeStatus": "pending" },
+    { "id": 4, "name": "Database Systems", "code": "CS301", "credits": 4, "gradeStatus": "passed" },
+    { "id": 5, "name": "Operating Systems", "code": "CS310", "credits": 3, "gradeStatus": "pending" }
+  ],
+  "students": [
+    { "id": 1, "name": "Alice", "courseId": 1 },
+    { "id": 2, "name": "Bob", "courseId": 1 },
+    { "id": 3, "name": "Charlie", "courseId": 2 }
+  ],
+  "enrollments": []
+}
